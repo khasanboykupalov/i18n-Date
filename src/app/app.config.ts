@@ -1,6 +1,6 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import { routes } from './app.routes';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader'
@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
           deps:[HttpClient]
         },
 
-        defaultLanguage: 'en',
+        defaultLanguage: 'uz',
 
       }),
     ]),
