@@ -1,13 +1,25 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { Component, inject } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+ 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'i18n';
+
+
+export class AppComponent  {
+
+  translate: TranslateService = inject(TranslateService);
+
+  languageChange(event: Event) {
+    const selectedLanguage = (event.target as HTMLSelectElement).value;
+    this.translateText(selectedLanguage);
+  }
+
+  translateText(lang:string) {
+ this.translate.use(lang);
+}
 }
