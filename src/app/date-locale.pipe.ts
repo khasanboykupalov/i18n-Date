@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DateLocalePipe implements PipeTransform {
 
-  private translateService = inject(TranslateService);
+   translateService = inject(TranslateService);
   private datePipe = new DatePipe('en-US');
   private currentLang$ = new BehaviorSubject<string>(this.translateService.currentLang ||'uz');
 
